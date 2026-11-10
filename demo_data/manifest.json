@@ -1,0 +1,46 @@
+{
+  "checksums": {
+    "address_zones.csv": "52896b6118a1dcc59562676196ead2c6e4928da625b3b2b61e02caad32006bfb",
+    "assignments.csv": "b1063980eb2b8e4574f300db6d074f424f488f07a4bb2de5be14e4feee5d454c",
+    "attendance_events.csv": "94b59ba0143a8d20c9d06d3094ba81c70e0e482ca61c6df3838463875af4b5e3",
+    "buses.csv": "b04b274f37f0a815d2713ee5f6533fb3f51051339715a0c236737aa77df17eaa",
+    "capacity_changes.csv": "ab4ec958e31aecc28e23fde12a28cc574b4fd5153dfc30b80da2ba6175c2a04e",
+    "drivers.csv": "f7fb23f7f0fc1cb5b2f42b6add5eb07b188e697a0b1c0046e2c2612733d2b60b",
+    "ground_truth.json": "ad63f47a9b0f614781a1bdc48f9f0645db5859962996d750e067e6ae2664b426",
+    "guardian_contacts.csv": "8a7f3f0b65a3dc79e9a8d9f347710f7ddc0e58afa4f7a098178484b704fabcd1",
+    "issues.csv": "10d9a786f235fe1fb43505bbb1d1fca4841c47deffb03e4e17f011b823083a9d",
+    "notifications.csv": "7ae938f11b090e74862b8645cbdc4ffede4966909db0744ae4de64cb3aeed890",
+    "route_disruptions.csv": "3a10be2249e27cb7485ab50f3aae16175c68f477d94afe6bd337cbcb0e33b8c0",
+    "route_stops.csv": "3a53f1dcfbe6e99e02cbd82f75a4750344fa8efdaf0a1f7249d9ae583b96c70b",
+    "routes.csv": "ef079f1137cec16dd5ae9276d2abafbddba177dd9638c5831b79fb68f51a5832",
+    "seed.sql": "bf2d5a9e5326b2139dffb94cb81ccd4df8f038be267cd614d1e2835a8e1db452",
+    "stops.csv": "ce3bf9ac4acd54862351618500af6ad86d81579693abcaed152aa2d538b666f8",
+    "students.csv": "db17417192aeef4742bbc33a1707bcddecb86f7b685d26fc03f7dd8603e2a2dc",
+    "validation_summary.json": "f0462f9c772bfd02ea9a77cb87c507667b941ff4be52f044e02476ea673b91b4"
+  },
+  "parameters": {
+    "buses": 12,
+    "school_days": 20,
+    "stops": 36,
+    "students": 120
+  },
+  "provenance": "Fully synthetic; no external data.",
+  "python_version": "3.12.9",
+  "row_counts": {
+    "address_zones": 9,
+    "assignments": 120,
+    "attendance_events": 2400,
+    "buses": 12,
+    "capacity_changes": 1,
+    "drivers": 12,
+    "guardian_contacts": 120,
+    "issues": 5,
+    "notifications": 173,
+    "route_disruptions": 2,
+    "route_stops": 2160,
+    "routes": 240,
+    "stops": 36,
+    "students": 120
+  },
+  "seed": 20261022
+}

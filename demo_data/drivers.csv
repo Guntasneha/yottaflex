@@ -1,0 +1,13 @@
+driver_id,display_name,license_class,lifecycle_state
+DRV-000001,Driver0001,standard,active
+DRV-000002,Driver0002,standard,active
+DRV-000003,Driver0003,standard,active
+DRV-000004,Driver0004,accessible,active
+DRV-000005,Driver0005,standard,active
+DRV-000006,Driver0006,standard,active
+DRV-000007,Driver0007,standard,active
+DRV-000008,Driver0008,accessible,active
+DRV-000009,Driver0009,standard,active
+DRV-000010,Driver0010,standard,active
+DRV-000011,Driver0011,standard,active
+DRV-000012,Driver0012,accessible,active

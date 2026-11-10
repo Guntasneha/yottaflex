@@ -1,0 +1,40 @@
+{
+  "anomalies": [
+    {
+      "issue_id": "ISSUE-001",
+      "issue_type": "capacity_exceeded",
+      "entity_id": "ROUTE-2026-000001",
+      "expected_decision": "reject_or_reassign",
+      "details": "Fixture load exceeds effective bus capacity by one."
+    },
+    {
+      "issue_id": "ISSUE-002",
+      "issue_type": "incompatible_route",
+      "entity_id": "ASN-STU-000001-2026",
+      "expected_decision": "reject_assignment",
+      "details": "Fixture pairs a wheelchair-required student with a non-accessible bus."
+    },
+    {
+      "issue_id": "ISSUE-003",
+      "issue_type": "impossible_travel_time",
+      "entity_id": "RST-00000001",
+      "expected_decision": "flag_route_infeasible",
+      "details": "Fixture arrival precedes minimum travel plus dwell."
+    },
+    {
+      "issue_id": "ISSUE-004",
+      "issue_type": "invalid_notification_contact",
+      "entity_id": "NOT-2026-000001",
+      "expected_decision": "suppress_and_alert",
+      "details": "Fixture targets a contact marked invalid."
+    },
+    {
+      "issue_id": "ISSUE-005",
+      "issue_type": "unapproved_address_exposed",
+      "entity_id": "STU-000001",
+      "expected_decision": "block_and_audit",
+      "details": "Fixture exposes address in a pending stop zone."
+    }
+  ],
+  "labels_note": "Scoring only; exclude from model input features."
+}

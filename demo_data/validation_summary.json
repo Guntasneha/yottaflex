@@ -1,0 +1,29 @@
+{
+  "attendance_status_counts": {
+    "absent": 139,
+    "late": 80,
+    "missed_pickup": 14,
+    "present": 2147,
+    "service_disrupted": 20
+  },
+  "baseline_rule_violations": 0,
+  "checks": {
+    "accessible_assignment_compatibility": true,
+    "approved_stops_only": true,
+    "capacity_respected": true,
+    "event_dates_ordered": true,
+    "foreign_keys_valid": true,
+    "primary_keys_unique": true,
+    "route_timing_feasible": true,
+    "synthetic_contact_domain_only": true
+  },
+  "known_anomaly_fixtures": 5,
+  "notification_count": 173,
+  "parameters": {
+    "buses": 12,
+    "school_days": 20,
+    "stops": 36,
+    "students": 120
+  },
+  "seed": 20261022
+}

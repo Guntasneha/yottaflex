@@ -1,0 +1,6 @@
+issue_id,issue_type,entity_id,expected_decision,details
+ISSUE-001,capacity_exceeded,ROUTE-2026-000001,reject_or_reassign,Fixture load exceeds effective bus capacity by one.
+ISSUE-002,incompatible_route,ASN-STU-000001-2026,reject_assignment,Fixture pairs a wheelchair-required student with a non-accessible bus.
+ISSUE-003,impossible_travel_time,RST-00000001,flag_route_infeasible,Fixture arrival precedes minimum travel plus dwell.
+ISSUE-004,invalid_notification_contact,NOT-2026-000001,suppress_and_alert,Fixture targets a contact marked invalid.
+ISSUE-005,unapproved_address_exposed,STU-000001,block_and_audit,Fixture exposes address in a pending stop zone.

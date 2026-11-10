@@ -1,0 +1,13 @@
+bus_id,capacity,accessible,lifecycle_state
+BUS-000001,65,false,active
+BUS-000002,70,false,active
+BUS-000003,60,false,active
+BUS-000004,65,true,active
+BUS-000005,70,false,active
+BUS-000006,60,false,active
+BUS-000007,65,false,active
+BUS-000008,70,true,active
+BUS-000009,60,false,active
+BUS-000010,65,false,active
+BUS-000011,70,false,active
+BUS-000012,60,true,active

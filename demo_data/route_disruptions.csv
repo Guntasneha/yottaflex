@@ -1,0 +1,3 @@
+disruption_id,route_id,service_date,reason,status
+DIS-000001,ROUTE-2026-000097,2026-01-13,vehicle,delayed
+DIS-000002,ROUTE-2026-000194,2026-01-21,vehicle,delayed
