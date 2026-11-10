@@ -1,8 +1,8 @@
 """School transportation assignment and safety operations demo."""
 from pathlib import Path
 import subprocess, sys
+from html import escape
 import pandas as pd
-import plotly.express as px
 import streamlit as st
 
 st.set_page_config(page_title="RouteWise | School Transport", page_icon="🚌", layout="wide")
@@ -18,6 +18,22 @@ def load_data(folder: str):
 def ensure_demo():
     if not (DATA/'students.csv').exists():
         subprocess.run([sys.executable, str(ROOT/'generate.py'), '--out', str(DATA), '--students','120','--buses','12','--stops','36','--days','20','--seed','20261022'], check=True)
+
+def render_bars(frame, label_col, value_col, title, suffix=''):
+    """Draw a small HTML chart without importing Altair or network-backed datasets."""
+    if frame.empty:
+        st.info('No data for this selection.')
+        return
+    maximum=max(float(frame[value_col].max()),1.0)
+    palette=['#1d7a68','#52a58d','#8ac6ad','#d58b42','#cb5d52','#6684b7']
+    rows=[]
+    for i, row in frame.reset_index(drop=True).iterrows():
+        label=escape(str(row[label_col]))
+        value=float(row[value_col])
+        width=max(2.0,100.0*value/maximum)
+        rows.append(f"<div class='rw-row'><span class='rw-label'>{label}</span><span class='rw-track'><span class='rw-fill' style='width:{width:.2f}%;background:{palette[i%len(palette)]}'></span></span><span class='rw-value'>{value:g}{escape(suffix)}</span></div>")
+    html=f"<section class='rw-chart'><div class='rw-title'>{escape(title)}</div>{''.join(rows)}</section>"
+    st.markdown("<style>.rw-chart{padding:12px 0}.rw-title{font-size:1rem;font-weight:600;margin-bottom:14px}.rw-row{display:grid;grid-template-columns:minmax(90px,145px) 1fr 54px;align-items:center;gap:10px;margin:10px 0}.rw-label{font-size:.86rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rw-track{height:12px;background:#e9efec;border-radius:8px;overflow:hidden}.rw-fill{display:block;height:100%;border-radius:8px}.rw-value{font-size:.84rem;text-align:right;color:#40534d}</style>"+html,unsafe_allow_html=True)
 
 ensure_demo()
 db = load_data(str(DATA))
@@ -43,11 +59,11 @@ if page == "Operations overview":
     left,right=st.columns([1.4,1])
     with left:
         counts=today.status.value_counts().rename_axis('Status').reset_index(name='Students')
-        st.plotly_chart(px.bar(counts,x='Status',y='Students',color='Status',title='Attendance outcomes'),use_container_width=True)
+        render_bars(counts,'Status','Students','Attendance outcomes')
     with right:
         load=assignments.merge(db['routes'][['route_id','bus_id']],on='route_id').groupby('bus_id').size().rename('Assigned').reset_index().merge(buses[['bus_id','capacity']],on='bus_id')
         load['Utilization %']=(100*load.Assigned/load.capacity).round(1)
-        st.plotly_chart(px.bar(load,x='bus_id',y='Utilization %',title='Seat utilization by bus'),use_container_width=True)
+        render_bars(load,'bus_id','Utilization %','Seat utilization by bus','%')
     st.subheader("Service exceptions")
     st.dataframe(db['issues'][['issue_type','entity_id','expected_decision','details']],hide_index=True,use_container_width=True)
 
